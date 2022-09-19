@@ -1,0 +1,31 @@
+# find storage account name  (not needed)
+STORAGE_ACCOUNT=$(az storage account list |  jq -r '.[]|select(.resourceGroup | startswith("oasis")).name')
+
+
+Debugging the server
+
+ kubectl exec --stdin --tty oasis-server-748cc56cf7-b5rt5 -- /bin/bash
+
+ python3 ./manage.py shell
+ from src.server.oasisapi.analyses.models import Analysis
+
+
+>>> Analysis.objects.all()
+<QuerySet [<Analysis: A1 - 1>, <Analysis: A2 - 1>, <Analysis: A3 - 1>, <Analysis: A4 - 1>, <Analysis: A5 - 1>, <Analysis: A6 - 1>, <Analysis
+>>> Analysis.objects.get(pk=12)
+<Analysis: test>
+>>> anal = Analysis.objects.get(pk=12)
+>>> anal.portfolio.location_file
+<RelatedFile: File_af1bbd6a52c9496289b169522f54e4b4.csv>
+>>> anal.portfolio.location_file_len()
+>>> anal.portfolio.location_file
+<RelatedFile: File_af1bbd6a52c9496289b169522f54e4b4.csv>
+>>> anal.portfolio.location_file.file
+<FieldFile: af1bbd6a52c9496289b169522f54e4b4.csv>
+>>> anal.portfolio.location_file
+<RelatedFile: File_af1bbd6a52c9496289b169522f54e4b4.csv>
+>>> anal.portfolio.location_file.content_type
+'application/vnd.ms-excel'
+>>> anal.portfolio.location_file.content_type
+'application/vnd.ms-excel'
+

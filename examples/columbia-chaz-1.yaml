@@ -1,0 +1,28 @@
+workers:
+  columbia_chaz_1:                        # A name that is unique among all workers
+    supplierId: columbia                  # Must be identical to supplier in the model data file share
+    modelId: chaz                         # Must be identical to name in the model data file share
+    modelVersionId: "1"                   # Must be identical to version in the model data file share
+    image: ${ACR}/coreoasis/model_worker  # The path to your image, ${ACR} will automatically be replaced with your environments URL
+    version: dev                          # Version tag of your image
+    imagePullPolicy: Always
+    env: # Additional worker environment variables
+      - name: OASIS_OASISLMF_CONFIG
+        value: "/home/worker/model/oasislmf.json" 
+      - name:  OASIS_MODEL_SETTINGS_FILE
+        value: "/home/worker/model/model_settings.json" 
+      - name: OASIS_DEBUG
+        value: "1"
+      - name: OASIS_KEEP_LOCAL_DATA
+        value: "True"
+      - name: OASIS_KEEP_REMOTE_DATA
+        value: "True"
+#      - name: OASIS_CELERY_CONCURRENCY
+#        value: "4"
+      - name: OASIS_MODEL_DATA_DIRECTORY
+        value: /home/worker/model
+    volumes: # Volume defined in modelVolumes
+      - name: oasis-models-azure-file
+        type: model-data
+        mountPath: /home/worker/model  # Set the mount path for your model data
+        source: azureFiles

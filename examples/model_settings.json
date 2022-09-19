@@ -1,0 +1,18 @@
+{
+    "model_default_samples": 10,
+    "model_settings":{
+        "event_set":{
+            "name": "Event Set",
+            "desc": "CHAZ Event Set",
+            "default": "p",
+            "options":[
+                {"id":"p", "desc": "Probabilistic", "number_of_events": 38127}
+            ]
+         }
+    },
+    "lookup_settings":{
+        "supported_perils":[
+           {"id": "WTC", "desc": "Single Peril: Tropical Cyclone"}
+        ]
+    }
+}

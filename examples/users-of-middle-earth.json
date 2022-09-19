@@ -1,0 +1,113 @@
+[{
+  "realm" : "oasis",
+  "groups": [
+        {
+            "name": "gondor",
+            "path": "/gondor"
+        },
+        {
+            "name": "middle_earth",
+            "path": "/middle_earth"
+        },
+        {
+            "name": "the_shire",
+            "path": "/the_shire"
+        },
+        {
+            "name": "mordor",
+            "path": "/mordor"
+        }
+  ],
+  "users" : [
+       {
+          "username" : "faramir",
+          "enabled" : true,
+          "totp" : false,
+          "emailVerified" : false,
+          "credentials" : [ {
+            "type" : "password",
+            "value": "pass"
+          } ],
+          "disableableCredentialTypes" : [ ],
+          "requiredActions" : [ ],
+          "realmRoles" : [ ],
+          "notBefore" : 0,
+          "groups" : [ "gondor" ]
+       } ,
+       {
+          "username" : "frodo",
+          "enabled" : true,
+          "totp" : false,
+          "emailVerified" : false,
+          "credentials" : [ {
+            "type" : "password",
+            "value": "pass"
+          } ],
+          "disableableCredentialTypes" : [ ],
+          "requiredActions" : [ ],
+          "realmRoles" : [ ],
+          "notBefore" : 0,
+          "groups" : [ "the_shire" ]
+       } ,
+       {
+          "username" : "gandalf",
+          "enabled" : true,
+          "totp" : false,
+          "emailVerified" : false,
+          "credentials" : [ {
+            "type" : "password",
+            "value": "notpass"
+          } ],
+          "disableableCredentialTypes" : [ ],
+          "requiredActions" : [ ],
+          "realmRoles" : [ ],
+          "notBefore" : 0,
+          "groups" : [ "gondor", "the_shire" ]
+       } ,
+       {
+          "username" : "iluvatar",
+          "enabled" : true,
+          "totp" : false,
+          "emailVerified" : false,
+          "credentials" : [ {
+            "type" : "password",
+            "value": "pass"
+          } ],
+          "disableableCredentialTypes" : [ ],
+          "requiredActions" : [ ],
+          "realmRoles" : [ ],
+          "notBefore" : 0,
+          "groups" : [ "middle_earth", "admin" ]
+       } ,
+       {
+          "username" : "gollum",
+          "enabled" : true,
+          "totp" : false,
+          "emailVerified" : false,
+          "credentials" : [ {
+            "type" : "password",
+            "value": "pass"
+          } ],
+          "disableableCredentialTypes" : [ ],
+          "requiredActions" : [ ],
+          "realmRoles" : [ ],
+          "notBefore" : 0,
+          "groups" : [ ]
+       },
+       {
+          "username" : "sauron",
+          "enabled" : true,
+          "totp" : false,
+          "emailVerified" : false,
+          "credentials" : [ {
+            "type" : "password",
+            "value": "pass"
+          } ],
+          "disableableCredentialTypes" : [ ],
+          "requiredActions" : [ ],
+          "realmRoles" : [ ],
+          "notBefore" : 0,
+          "groups" : [ "mordor" ]
+       }
+   ]
+}]

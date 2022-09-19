@@ -1,0 +1,23 @@
+{
+  "model_supplier_id": "columbia",
+  "model_name_id": "chaz",
+  "number_of_samples": 10,
+  "gul_threshold": 0,
+  "gul_output": true,
+  "model_settings": {
+      "event_set": "p"
+  },
+  "gul_summaries": [
+    {
+      "aalcalc": false,
+      "eltcalc": true,
+      "id": 1,
+      "lec_output": false,
+      "leccalc": {
+        "full_uncertainty_aep": true,
+        "full_uncertainty_oep": true,
+        "return_period_file": false
+      }
+    }
+  ]
+}
